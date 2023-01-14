@@ -19,8 +19,8 @@ public class PatientEntity {
     @Column(name="is_archived")
     private boolean is_archived;
 
-    @OneToMany(mappedBy="patient")
-    private List<TicketEntity> tickets;
+//    @OneToMany(mappedBy="patient")
+//    private List<TicketEntity> tickets;
 
     public PatientEntity(int id, String name, String phone) {
         this.id = id;
@@ -58,7 +58,7 @@ public class PatientEntity {
 
     public void setIs_archived(boolean is_archived) { this.is_archived = is_archived; }
 
-    public List<TicketEntity> getTickets() { return tickets; }
-
-    public void setTickets(List<TicketEntity> tickets) { this.tickets = tickets; }
+//    public List<TicketEntity> getTickets() { return tickets; }
+//
+//    public void setTickets(List<TicketEntity> tickets) { this.tickets = tickets; }
 }

@@ -2,6 +2,8 @@ package ru.eltech.CourseProjectServer.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Optional;
+
 @Entity(name="ticket")
 @Table(name="ticket")
 public class TicketEntity {
@@ -42,5 +44,21 @@ public class TicketEntity {
 
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
+    }
+
+    public DoctorEntity getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(DoctorEntity doctor) {
+        this.doctor = doctor;
+    }
+
+    public PatientEntity getPatient() {
+        return patient;
+    }
+
+    public void setPatient(PatientEntity patient) {
+        this.patient = patient;
     }
 }
