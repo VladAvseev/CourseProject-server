@@ -37,7 +37,7 @@ public class TicketController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/delete/{id}")
     public ResponseEntity deleteTicket(@PathVariable int id) {
         try {
             ticketService.deleteTicket(id);
