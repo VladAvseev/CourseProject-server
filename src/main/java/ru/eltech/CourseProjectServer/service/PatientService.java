@@ -25,15 +25,16 @@ public class PatientService {
         return patientRepo.findById(id);
     }
 
-    public PatientEntity createPatient(String name, String phone) throws SQLException {
+    public PatientEntity createPatient(String name, String phone, String email) throws SQLException {
         PatientEntity patientEntity = new PatientEntity();
         patientEntity.setName(name);
         patientEntity.setPhone(phone);
+        patientEntity.setEmail(email);
         return patientRepo.save(patientEntity);
     }
 
-    public void updatePatient(int id, String name, String phone) throws SQLException {
-        patientRepo.update(name, phone, id);
+    public void updatePatient(int id, String name, String phone, String email) throws SQLException {
+        patientRepo.update(name, phone, email, id);
     }
 
     public void deletePatient(int id) throws SQLException {

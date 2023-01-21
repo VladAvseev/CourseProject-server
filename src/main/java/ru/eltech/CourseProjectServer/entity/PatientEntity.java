@@ -16,6 +16,9 @@ public class PatientEntity {
     @Column(name="phone", length=11, unique=true)
     private String phone;
 
+    @Column(name="email", length=50, unique=true)
+    private String email;
+
     @Column(name="is_archived")
     private boolean is_archived;
 
@@ -54,11 +57,11 @@ public class PatientEntity {
         this.phone = phone;
     }
 
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
+
     public boolean isIs_archived() { return is_archived; }
 
     public void setIs_archived(boolean is_archived) { this.is_archived = is_archived; }
-
-//    public List<TicketEntity> getTickets() { return tickets; }
-//
-//    public void setTickets(List<TicketEntity> tickets) { this.tickets = tickets; }
 }

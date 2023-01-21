@@ -29,17 +29,17 @@ public class PatientController {
     @GetMapping("/{id}")
     public ResponseEntity getPatientById(@PathVariable int id) {
         try {
-            Optional<PatientEntity> doctor = patientService.getPatientById(id);
-            return ResponseEntity.ok(doctor);
+            Optional<PatientEntity> patient = patientService.getPatientById(id);
+            return ResponseEntity.ok(patient);
         } catch (Exception ex) {
             return ResponseEntity.badRequest().body(ex.getMessage());
         }
     }
 
     @PostMapping
-    public ResponseEntity createPatient(@RequestParam String name, @RequestParam String phone) {
+    public ResponseEntity createPatient(@RequestParam String name, @RequestParam String phone, @RequestParam String email) {
         try {
-            PatientEntity patient = patientService.createPatient(name, phone);
+            PatientEntity patient = patientService.createPatient(name, phone, email);
             return ResponseEntity.ok(patient);
         } catch (Exception ex) {
             return ResponseEntity.badRequest().body(ex.getMessage());
@@ -47,11 +47,11 @@ public class PatientController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity updatePatient(@PathVariable int id, @RequestParam String name, @RequestParam String phone) {
+    public ResponseEntity updatePatient(@PathVariable int id, @RequestParam String name, @RequestParam String phone, @RequestParam String email) {
         try {
-            patientService.updatePatient(id, name, phone);
-            Optional<PatientEntity> doctor = patientService.getPatientById(id);
-            return ResponseEntity.ok(doctor);
+            patientService.updatePatient(id, name, phone, email);
+            Optional<PatientEntity> patient = patientService.getPatientById(id);
+            return ResponseEntity.ok(patient);
         } catch (Exception ex) {
             return ResponseEntity.badRequest().body(ex.getMessage());
         }

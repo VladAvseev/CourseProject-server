@@ -10,8 +10,8 @@ public interface PatientRepo extends JpaRepository<PatientEntity, Integer> {
 
     @Modifying
     @Transactional
-    @Query("UPDATE patient SET name = ?1, phone = ?2 WHERE id = ?3")
-    void update(String name, String phone, int id);
+    @Query("UPDATE patient SET name = ?1, phone = ?2, email = ?3 WHERE id = ?4")
+    void update(String name, String phone, String email, int id);
 
     @Modifying
     @Transactional
